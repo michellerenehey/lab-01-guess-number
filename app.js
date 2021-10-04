@@ -3,10 +3,11 @@ const userInput = document.getElementById('user-input');
 const submitButton = document.getElementById('submit-button'); 
 const timesGuessed = document.getElementById('times-guessed'); 
 const userMessage = document.getElementById('user-message'); 
+const resetButton = document.getElementById('reset-button'); 
 
 // set state 
 let numGuesses = 0; 
-const randomNum = (Math.floor(Math.random() * 20)+1);
+let randomNum = (Math.floor(Math.random() * 20)+1);
 
 
 // event listener
@@ -20,6 +21,7 @@ submitButton.addEventListener('click', () => {
   } else if (numGuesses === 4) {
     result = "You're out of guesses"; 
     submitButton.style.display = "none";
+    resetButton.style.display = "block"; 
   } else if (userGuess > randomNum) {
     result = "You guessed too high"
   } else {
@@ -27,3 +29,10 @@ submitButton.addEventListener('click', () => {
   }; 
   userMessage.textContent = result;
   });
+  
+resetButton.addEventListener('click', () => {
+  numGuesses = 0; 
+  randomNum = "", 
+  submitButton.style.display = "block"; 
+  resetButton.style.display = "none"; 
+})
