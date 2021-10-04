@@ -1,8 +1,18 @@
-// import functions and grab DOM elements
+//grab DOM elements from HTML
+const userInput = document.getElementById('user-input');
+const submitButton = document.getElementById('submit-button'); 
+const timesGuessed = document.getElementById('times-guessed'); 
+const userMessage = document.getElementById('user-message'); 
 
-// initialize global state
+// set state 
+let numGuesses = 0; 
+const randomNum = (Math.floor(Math.random() * 20)+1);
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+// event listener
+
+submitButton.addEventListener('click', () => {
+  numGuesses ++; 
+  const userGuess = Number(userInput.value); 
+  if (userGuess === randomNum)
+  
+})
