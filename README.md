@@ -2,6 +2,42 @@
 
 ## Making a plan
 
+### HTML ELEMENTS
+* Header: static
+* User Input: static
+* Button: static
+* Number of guesses: dynamic (changes based on numGuesses)
+* User message: dynamic (changes based on userGuesses)
+
+### STATE
+**userGuess**: will hold the value of the user input field 
+**randomNum**: generate a random number between 1 -20 at the start of every game
+**numGuesses**: increments 0 to 4 each time a user clicks the button
+**userMessage** 
+    * "you're correct!": userGuess === randomNum
+    * "you're out of guesses": numGuesses > 4 (or numGuesses === 0)
+    * "guess too high": userGuess > randomNum
+    * "guess too low": userGuess < randomNum 
+    * "invalid* --> stretch goal if userGuess > 20 or NaN
+
+### JS
+* Need to initialize the DOM elements listed above as dynamic
+* Need to set the state, as listed above in state
+* What events to listen for? 
+    * Button click! On click, do the following: 
+        * increment a guess;
+        * get value of the user guess from the input (.value); dont' forget to convert to a number
+        * compare userGuess to random Num: 
+             - If (userGuess === randomNum) 
+                  - Display you won!
+             - Else if (numGuesses === 4) will this be diff if we count down? 
+                  - Display you’re out of guesses 
+             - Else if (userGuess > randomNum) 
+                  - Display guess too high
+             - Else if (userGuess < randomNum)
+                  - Display guess too low
+
+
 (bolded steps are mandatory, unbolded are for more advanced projects)
 
 1) **Make a drawing of your app. Simple "wireframes"**
