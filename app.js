@@ -8,11 +8,22 @@ const userMessage = document.getElementById('user-message');
 let numGuesses = 0; 
 const randomNum = (Math.floor(Math.random() * 20)+1);
 
-// event listener
 
+// event listener
 submitButton.addEventListener('click', () => {
   numGuesses ++; 
+  timesGuessed.textContent = numGuesses; 
   const userGuess = Number(userInput.value); 
-  if (userGuess === randomNum)
-  
-})
+  let result; 
+  if (userGuess === randomNum){
+    result = "You win"
+  } else if (numGuesses === 4) {
+    result = "You're out of guesses"; 
+    submitButton.style.display = "none";
+  } else if (userGuess > randomNum) {
+    result = "You guessed too high"
+  } else {
+    result = "You guessed too low"
+  }; 
+  userMessage.textContent = result;
+  });
