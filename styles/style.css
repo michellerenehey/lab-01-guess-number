@@ -2,8 +2,42 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #A2A79E;
+    font-family: 'Akronim', cursive;
+}
+
+h1 {
+    color: #88292F; 
+    margin: 10px;
+    font-size: 3rem;
+}
+
+h2 {
+    color: #2E1E0F, 
+    margin: 10px;
 }
 
 #reset-button {
     display: none;
+}
+
+input {
+    height: 35px;
+    padding: 2px; 
+    border-radius: 15px;
+    text-align: center;
+    background-color: #A27E8E;
+}
+
+#submit-button, #reset-button{
+    margin: 10px;
+    background-color: #88292F; ;
+    border-radius: 50%;
+    height: 50px;
+    cursor:pointer;
+}
+
+p {
+    font-size: 30px;
+    color: #2E1E0F;
 }
