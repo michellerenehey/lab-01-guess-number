@@ -11,12 +11,15 @@ let numGuesses = 4;
 let randomNum = (Math.floor(Math.random() * 20) + 1);
 console.log(randomNum, 'first random number'); 
 
+// import { compareNumbers } from './compareNumbersjs';
+
 // event listener
 submitButton.addEventListener('click', () => {
     numGuesses --; 
     timesGuessed.textContent = numGuesses; 
     const userGuess = Number(userInput.value); 
     let result; 
+    
     if (userGuess === randomNum){
         result = 'You win!!!'; 
         guessesRemaining.textContent = '';
@@ -33,6 +36,8 @@ submitButton.addEventListener('click', () => {
         result = 'You guessed too low!';
     } 
     userMessage.textContent = result;
+    // console.log(compareNumbers(userGuess, randomNum));
+    // userMessage.textContent = compareNumbers(userGuess, randomNum);
 });
   
 resetButton.addEventListener('click', () => {
