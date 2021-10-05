@@ -4,6 +4,10 @@ body {
     align-items: center;
     background-color: #A2A79E;
     font-family: 'Akronim', cursive;
+    background-image: url("../assets/IrF.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 h1 {
@@ -39,5 +43,5 @@ input {
 
 p {
     font-size: 30px;
-    color: #2E1E0F;
+    color: #A2A79E;
 }
