@@ -19,9 +19,9 @@ submitButton.addEventListener('click', () => {
     let result; 
     if (userGuess === randomNum){
         result = 'You win!!!'; 
-        // guessesRemaining.textContent = "";
-        // submitButton.style.display = "none";
-        // resetButton.style.display = "block"; 
+        guessesRemaining.textContent = '';
+        submitButton.style.display = 'none';
+        resetButton.style.display = 'block'; 
     } else if (numGuesses === 0) {
         result = "You're out of guesses :( :( :("; 
         submitButton.style.display = 'none';
@@ -40,7 +40,8 @@ resetButton.addEventListener('click', () => {
     console.log(randomNum, 'new random number');
     userInput.value = ''; 
     userMessage.textContent = ''; 
-    timesGuessed.textContent = 4;
+    // timesGuessed.textContent = 4;
+    // guessesRemaining.textContent = `You have ${timesGuessed} guesses remaining.`;
     submitButton.style.display = 'block'; 
     resetButton.style.display = 'none'; 
 });
