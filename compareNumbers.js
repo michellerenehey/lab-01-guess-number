@@ -1,8 +1,8 @@
-export function compareNumbers(guess, correctNumber){
-    if (guess === correctNumber) {
+export function compareNumbers(userInput, randomNum){
+    if (userInput === randomNum) {
         return 0;
-    } else if (guess < correctNumber) {
+    } else if (userInput < randomNum) {
         return -1;
-    } else if (guess > correctNumber) {
+    } else if (userInput > randomNum) {
         return 1;
     }}
