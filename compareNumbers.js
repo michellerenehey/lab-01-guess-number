@@ -1,8 +1,8 @@
-export function compareNumbers(userInput, randomNum){
-    if (userInput === randomNum) {
-        return 'You win!!!';
-    } else if (userInput < randomNum) {
-        return 'You guessed too low!';
-    } else if (userInput > randomNum) {
-        return 'You guessed too high!';
+export function compareNumbers(userGuess, randomNum){
+    if (userGuess === randomNum) {
+        return 0;
+    } else if (userGuess < randomNum) {
+        return -1;
+    } else if (userGuess > randomNum) {
+        return 1;
     }}

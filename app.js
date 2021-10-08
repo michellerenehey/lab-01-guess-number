@@ -11,7 +11,9 @@ let numGuesses = 4;
 let randomNum = (Math.floor(Math.random() * 20) + 1);
 console.log(randomNum, 'first random number'); 
 
-// import { compareNumbers } from './compareNumbersjs';
+
+// import function
+import { compareNumbers } from './compareNumbers.js';
 
 // event listener
 submitButton.addEventListener('click', () => {
@@ -20,25 +22,31 @@ submitButton.addEventListener('click', () => {
     const userGuess = Number(userInput.value); 
     let result; 
     
-    if (userGuess === randomNum){
+    if (compareNumbers(userGuess, randomNum) === 0) {
         result = 'You win!!!'; 
         guessesRemaining.textContent = '';
         submitButton.style.display = 'none';
-        resetButton.style.display = 'block'; 
-    } else if (numGuesses === 0) {
+        resetButton.style.display = 'block';
+    }
+
+    if (numGuesses === 0) {
         result = "You're out of guesses :( :( :("; 
         guessesRemaining.textContent = '';
         submitButton.style.display = 'none';
-        resetButton.style.display = 'block'; 
-    } else if (userGuess > randomNum) {
-        result = 'You guessed too high!'; 
-    } else {
+        resetButton.style.display = 'block';         
+    }
+
+    if (compareNumbers(userGuess, randomNum) === 1) {
+        result = 'You guessed too high!';         
+    }
+
+    if (compareNumbers(userGuess, randomNum) === -1) {
         result = 'You guessed too low!';
-    } 
+    }
+    
     userMessage.textContent = result;
-    // console.log(compareNumbers(userGuess, randomNum));
-    // userMessage.textContent = compareNumbers(userGuess, randomNum);
 });
+
   
 resetButton.addEventListener('click', () => {
     numGuesses = 4; 
